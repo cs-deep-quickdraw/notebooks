@@ -236,29 +236,6 @@ def evaluate_model(model, loader):
 
     return 100. * correct / total
 
-import matplotlib.pyplot as plt
-
-def plot_training(losses, accs, n_epochs):
-  fig, ax1 = plt.subplots()
-
-  color = 'tab:red'
-  ax1.set_xlabel('epoch')
-  ax1.set_ylabel('training loss', color=color)
-  ax1.plot(losses, color=color)
-  ax1.tick_params(axis='y', labelcolor=color)
-  ax1.set_ylim([0, 5])
-
-  ax1.set_xlim([0, n_epochs])
-  ax2 = ax1.twinx()  # instantiate a second axes that shares the same x-axis
-
-  color = 'tab:blue'
-  ax2.set_ylabel('validation accuracy', color=color)  # we already handled the x-label with ax1
-  ax2.plot(accs, color=color)
-  ax2.tick_params(axis='y', labelcolor=color)
-  ax2.set_ylim([0, 100])
-
-  fig.tight_layout()  # otherwise the right y-label is slightly clipped
-  plt.show()
 
 import copy
 import time
@@ -299,10 +276,6 @@ def train_model(model, opt, loss_fn, loader, v_loader, n_epochs):
     print(f"\rEpoch: {epoch+1}/{n_epochs}, loss: {mean_loss}, validation accuracy: {val_acc}% took: {time.time() - start} seconds")
 
   print(f"Training ended after {n_epochs} ! Best validation accuracy: {best_acc}%")
-  try:
-    plot_training(losses, accs, n_epochs)
-  except:
-    print("error occurred when plotting losses and accuracy training data")
   return best_model, losses, accs
 
 from torch.nn.utils.rnn import pad_sequence
