@@ -160,7 +160,7 @@ train_classes = classes[:]
 conv1 = (128, 5)
 bidirectional = True
 
-N_train = 60000
+N_train = 45000
 N_val = 8000
 N_test = 10000
 N_test_reserved = 20000
