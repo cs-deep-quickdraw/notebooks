@@ -3,8 +3,8 @@
 #PBS -S /bin/bash
 #PBS -N quickdraw_train
 #PBS -j oe
-#PBS -l walltime=01:00:00
-#PBS -q gpuq -l select=1:ncpus=12:ngpus=1:gputype=k40
+#PBS -l walltime=04:00:00
+#PBS -q gpuq -l select=1:ncpus=12:ngpus=1:gputype=p100
 #PBS -M sami.tabet@student.ecp.fr
 #PBS -m abe
 #PBS -q gpuq
@@ -21,4 +21,4 @@ module load anaconda3/5.3.1
 source activate quickdraw
 
 # Train the network
-python test_quickdraw.py
+python lstm_quickdraw.py
