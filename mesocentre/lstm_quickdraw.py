@@ -154,7 +154,7 @@ class DrawDataset(Dataset):
 batch_size = 256
 learning_rate = 0.001
 
-hidden_size = 64
+hidden_size = 128
 n_layers = 2
 train_classes = classes[:]
 conv1 = (128, 5)
@@ -296,11 +296,11 @@ optimizer = optim.Adam(model.parameters(), lr = learning_rate)
 
 best_model, losses, accs = train_model(model, optimizer, loss_function, train_loader, val_loader, n_epochs)
 
-print(f"Test accuracy: {evaluate_model(best_model, test_loader)}%")
+print(f"Test accuracy: {evaluate_model(model, test_loader)}%")
 
 import time
 
 model_path = f'lstm_quickdraw.model.{time.time()}'
-torch.save(model, model_path)
+torch.save(best_model, model_path)
 
 print(f"Model saved at: {model_path}")
