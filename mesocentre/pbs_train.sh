@@ -3,7 +3,7 @@
 #PBS -S /bin/bash
 #PBS -N quickdraw_train
 #PBS -j oe
-#PBS -l walltime=04:00:00
+#PBS -l walltime=08:00:00
 #PBS -q gpuq -l select=1:ncpus=12:ngpus=1:gputype=p100:mem=150gb
 #PBS -M sami.tabet@student.ecp.fr
 #PBS -m abe
