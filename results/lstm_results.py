@@ -12,6 +12,7 @@ ast = markdown(raw)
 
 results = {}
 
+
 def parse_scores(text):
     loss, acc = [], []
 
@@ -23,38 +24,39 @@ def parse_scores(text):
 
     return loss, acc
 
+
 level = 0
 title = []
 for child in ast:
-    if child['type'] == 'heading':
-        lv = child['level']
-        data = child['children'][0]['text']
+    if child["type"] == "heading":
+        lv = child["level"]
+        data = child["children"][0]["text"]
 
         if level >= lv:
-            title = title[:lv-1]
+            title = title[: lv - 1]
 
         level = lv
         title.append(data)
     else:
-        if child['type'] == 'block_code' and child['info'] != 'python':
-            results['.'.join(title).lower().replace(" ", "_").replace("results.", "")] = parse_scores(child['text'])
-
-pprint.pprint(results)
+        if child["type"] == "block_code" and child["info"] != "python":
+            results[
+                ".".join(title).lower().replace(" ", "_").replace("results.", "")
+            ] = parse_scores(child["text"])
 
 plt.subplot(2, 1, 1)
 for key, (loss, _) in results.items():
     plt.plot(loss, label=key)
-plt.ylabel("cross entropy loss")
-plt.grid(linestyle='--', linewidth=1)
+plt.ylabel("training's cross entropy loss")
+plt.grid(linestyle="--", linewidth=1)
 
 plt.legend()
 
 plt.subplot(2, 1, 2)
 for key, (_, acc) in results.items():
     plt.plot(acc, label=key)
-plt.ylabel("accuracy")
+plt.ylabel("validation's accuracy")
 plt.xlabel("epoch")
 
-plt.grid(linestyle='--', linewidth=1)
+plt.grid(linestyle="--", linewidth=1)
 
 plt.show()
