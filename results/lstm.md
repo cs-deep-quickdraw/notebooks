@@ -399,4 +399,15 @@ n_epochs = 10
 
 Results:
 ```
+Epoch: 1/10, loss: 2.241943362113777, validation accuracy: 68.43325% took: 551.8330771923065 seconds
+Epoch: 2/10, loss: 0.7178280552393584, validation accuracy: 77.101% took: 552.4268352985382 seconds
+Epoch: 3/10, loss: 0.568413649472906, validation accuracy: 80.37875% took: 556.9509761333466 seconds
+Epoch: 4/10, loss: 0.5019938328381951, validation accuracy: 81.4775% took: 553.2961277961731 seconds
+Epoch: 5/10, loss: 0.4595997158195273, validation accuracy: 82.874% took: 553.0105752944946 seconds
+Epoch: 6/10, loss: 0.42786897372554056, validation accuracy: 83.26475% took: 557.2912697792053 seconds
+Epoch: 7/10, loss: 0.4011682662366676, validation accuracy: 83.07625% took: 552.2755541801453 seconds
+Epoch: 8/10, loss: 0.37829458634000146, validation accuracy: 83.33875% took: 551.1248097419739 seconds
+Epoch: 9/10, loss: 0.35719512086602434, validation accuracy: 83.512% took: 552.0249559879303 seconds
+Epoch: 10/10, loss: 0.3381216313070575, validation accuracy: 83.45275% took: 551.1745088100433 seconds
+Training ended after 10 ! Best validation accuracy: 83.512%
 ```
