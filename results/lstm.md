@@ -1,8 +1,26 @@
-# Simple LSTM
+# Description
 
-## 1 layer
+models can be found under the `lstm` directory as pytorch `state_dict`'s, the convention for their name is:
 
-### Size 64
+`<type>_lay<n_lstm_layers>_sz<lstm_hidden_size>.model` for non convolutional models
+
+and
+
+`<type>_cv1<conv1_params>_lay<n_lstm_layers>_sz<lstm_hidden_size>.model`
+
+or 
+
+`<type>_cv1<conv1_params>_cv2<conv2_params>_lay<n_lstm_layers>_sz<lstm_hidden_size>.model`
+
+for models with convolution layers.
+
+# Results
+
+## Simple LSTM
+
+### 1 layer
+
+#### Size 64
 
 Config:
 ```python
@@ -43,9 +61,52 @@ Epoch: 10/10, loss: 1.1950125450607636, validation accuracy: 55.08175% took: 85.
 Training ended after 10 ! Best validation accuracy: 55.08175%
 ```
 
-## 2 layers
+#### Size 256
 
-### Size 64
+Config:
+
+```python
+# Config:
+batch_size = 256
+learning_rate = 0.001
+
+hidden_size = 256
+n_layers = 1
+train_classes = classes[:]
+
+# Use None instead of (n_filters, filter_size) to disable convolution
+# Note that conv1 = None forces conv2 = None automatically
+conv1 = None # (128, 5)
+conv2 = None
+bidirectional = False
+
+N_train = 20000
+N_val = N_train // 5
+N_test = N_val
+N_test_reserved = 20000
+max_padding = 100
+n_epochs = 10
+```
+
+Results:
+```
+Epoch: 1/10, loss: 2.783527677432685, validation accuracy: 54.7115% took: 153.96742296218872 seconds
+Epoch: 2/10, loss: 0.9768686812710978, validation accuracy: 67.10025% took: 153.85839748382568 seconds
+Epoch: 3/10, loss: 0.7582797594554412, validation accuracy: 72.373% took: 154.46974325180054 seconds
+Epoch: 4/10, loss: 0.6668542796047613, validation accuracy: 75.6255% took: 154.2045316696167 seconds
+Epoch: 5/10, loss: 0.6150482786185424, validation accuracy: 76.8065% took: 154.68227529525757 seconds
+Epoch: 6/10, loss: 0.5801469895730751, validation accuracy: 77.51375% took: 154.3025188446045 seconds
+Epoch: 7/10, loss: 0.5543020138030441, validation accuracy: 78.241% took: 154.91842246055603 seconds
+Epoch: 8/10, loss: 0.5347797621704774, validation accuracy: 79.14625% took: 153.85254073143005 seconds
+Epoch: 9/10, loss: 0.5192326117298842, validation accuracy: 79.66825% took: 153.9149079322815 seconds
+Epoch: 10/10, loss: 0.5061628646861571, validation accuracy: 79.7425% took: 154.259685754776 seconds
+Training ended after 10 ! Best validation accuracy: 79.7425%
+```
+
+
+### 2 layers
+
+#### Size 64
 
 
 Config:
