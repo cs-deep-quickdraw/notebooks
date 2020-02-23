@@ -8,7 +8,7 @@ and
 
 `<type>_cv1<conv1_params>_lay<n_lstm_layers>_sz<lstm_hidden_size>.model`
 
-or 
+or
 
 `<type>_cv1<conv1_params>_cv2<conv2_params>_lay<n_lstm_layers>_sz<lstm_hidden_size>.model`
 
@@ -235,3 +235,54 @@ Epoch: 9/10, loss: 0.38538270862600216, validation accuracy: 83.3% took: 258.162
 Epoch: 10/10, loss: 0.37134333474412096, validation accuracy: 83.49% took: 259.6124622821808 seconds
 Training ended after 10 ! Best validation accuracy: 83.49%
 ```
+
+## BiLSTM
+
+### 1 layer
+
+#### Size 64
+
+Config:
+
+```python
+# Config:
+batch_size = 256
+learning_rate = 0.001
+
+hidden_size = 64
+n_layers = 1
+train_classes = classes[:]
+
+# Use None instead of (n_filters, filter_size) to disable convolution
+# Note that conv1 = None forces conv2 = None automatically
+conv1 = None # (128, 5)
+conv2 = None
+bidirectional = True
+
+N_train = 20000
+N_val = N_train // 5
+N_test = N_val
+N_test_reserved = 20000
+max_padding = 100
+n_epochs = 10
+```
+
+Results:
+
+```
+Epoch: 1/10, loss: 3.750726910295368, validation accuracy: 17.57625% took: 120.00426959991455 seconds
+Epoch: 2/10, loss: 2.3574404854269746, validation accuracy: 30.25825% took: 121.44381976127625 seconds
+Epoch: 3/10, loss: 1.693413782955879, validation accuracy: 40.00475% took: 121.1829206943512 seconds
+Epoch: 4/10, loss: 1.4552458309416245, validation accuracy: 45.6085% took: 121.54740023612976 seconds
+Epoch: 5/10, loss: 1.3393976971188566, validation accuracy: 48.1245% took: 121.05478978157043 seconds
+Epoch: 6/10, loss: 1.264559272277619, validation accuracy: 49.8545% took: 121.7063364982605 seconds
+Epoch: 7/10, loss: 1.2118903881957586, validation accuracy: 51.248% took: 121.09454131126404 seconds
+Epoch: 8/10, loss: 1.170916801414126, validation accuracy: 52.34375% took: 121.00283908843994 seconds
+Epoch: 9/10, loss: 1.1397529384184475, validation accuracy: 53.3945% took: 122.36961388587952 seconds
+Epoch: 10/10, loss: 1.1141537592762887, validation accuracy: 54.126% took: 122.86240983009338 seconds
+Training ended after 10 ! Best validation accuracy: 54.126%
+```
+
+#### Size 256
+
+TODO
