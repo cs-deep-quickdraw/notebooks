@@ -1,7 +1,7 @@
 import sys
 import mistune
 import pprint
-
+import matplotlib.pyplot as plt
 
 markdown = mistune.create_markdown(renderer=mistune.AstRenderer())
 
@@ -37,6 +37,24 @@ for child in ast:
         title.append(data)
     else:
         if child['type'] == 'block_code' and child['info'] != 'python':
-            results['.'.join(title).lower().replace(" ", "_")] = parse_scores(child['text'])
+            results['.'.join(title).lower().replace(" ", "_").replace("results.", "")] = parse_scores(child['text'])
 
 pprint.pprint(results)
+
+plt.subplot(2, 1, 1)
+for key, (loss, _) in results.items():
+    plt.plot(loss, label=key)
+plt.ylabel("cross entropy loss")
+plt.grid(linestyle='--', linewidth=1)
+
+plt.legend()
+
+plt.subplot(2, 1, 2)
+for key, (_, acc) in results.items():
+    plt.plot(acc, label=key)
+plt.ylabel("accuracy")
+plt.xlabel("epoch")
+
+plt.grid(linestyle='--', linewidth=1)
+
+plt.show()
