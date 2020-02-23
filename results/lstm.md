@@ -285,4 +285,118 @@ Training ended after 10 ! Best validation accuracy: 54.126%
 
 #### Size 256
 
-TODO
+Config:
+```python
+# Config:
+batch_size = 256
+learning_rate = 0.001
+
+hidden_size = 256
+n_layers = 1
+train_classes = classes[:]
+
+# Use None instead of (n_filters, filter_size) to disable convolution
+# Note that conv1 = None forces conv2 = None automatically
+conv1 = None # (128, 5)
+conv2 = None
+bidirectional = True
+
+N_train = 20000
+N_val = N_train // 5
+N_test = N_val
+N_test_reserved = 20000
+max_padding = 100
+n_epochs = 10
+```
+
+Results:
+```
+Epoch: 1/10, loss: 3.450085401062042, validation accuracy: 46.44675% took: 222.4983425140381 seconds
+Epoch: 2/10, loss: 1.0706067289263068, validation accuracy: 67.308% took: 223.42625331878662 seconds
+Epoch: 3/10, loss: 0.7785157866344002, validation accuracy: 73.3275% took: 224.1862027645111 seconds
+Epoch: 4/10, loss: 0.673292183615129, validation accuracy: 75.59225% took: 223.58587527275085 seconds
+Epoch: 5/10, loss: 0.6154802498394192, validation accuracy: 77.57575% took: 223.44685244560242 seconds
+Epoch: 6/10, loss: 0.5785185304628541, validation accuracy: 77.986% took: 222.65764713287354 seconds
+Epoch: 7/10, loss: 0.5523939039121895, validation accuracy: 78.9695% took: 223.1387050151825 seconds
+Epoch: 8/10, loss: 0.5323585802807205, validation accuracy: 79.4235% took: 225.70758032798767 seconds
+Epoch: 9/10, loss: 0.5165840414922857, validation accuracy: 79.55125% took: 225.84810876846313 seconds
+Epoch: 10/10, loss: 0.5034468623094426, validation accuracy: 80.3615% took: 221.7098958492279 seconds
+Training ended after 10 ! Best validation accuracy: 80.3615%
+```
+
+
+### 2 layer
+
+#### Size 64
+
+Config:
+
+```python
+# Config:
+batch_size = 256
+learning_rate = 0.001
+
+hidden_size = 64
+n_layers = 2
+train_classes = classes[:]
+
+# Use None instead of (n_filters, filter_size) to disable convolution
+# Note that conv1 = None forces conv2 = None automatically
+conv1 = None # (128, 5)
+conv2 = None
+bidirectional = True
+
+N_train = 20000
+N_val = N_train // 5
+N_test = N_val
+N_test_reserved = 20000
+max_padding = 100
+n_epochs = 10
+```
+
+Results:
+
+```
+Epoch: 1/10, loss: 2.85440549114427, validation accuracy: 43.80875% took: 159.92264580726624 seconds
+Epoch: 2/10, loss: 1.3070660994023287, validation accuracy: 59.8185% took: 160.52830529212952 seconds
+Epoch: 3/10, loss: 1.002111164056948, validation accuracy: 65.979% took: 160.42838668823242 seconds
+Epoch: 4/10, loss: 0.8725508252118471, validation accuracy: 69.00175% took: 159.8428339958191 seconds
+Epoch: 5/10, loss: 0.7979135324947968, validation accuracy: 71.179% took: 160.1855492591858 seconds
+Epoch: 6/10, loss: 0.7501726136361074, validation accuracy: 72.32525% took: 160.2415418624878 seconds
+Epoch: 7/10, loss: 0.7173503141549368, validation accuracy: 73.697% took: 160.5984365940094 seconds
+Epoch: 8/10, loss: 0.6923283491925913, validation accuracy: 74.4915% took: 161.3248324394226 seconds
+Epoch: 9/10, loss: 0.673028680673409, validation accuracy: 75.13575% took: 160.56888151168823 seconds
+Epoch: 10/10, loss: 0.656578666564522, validation accuracy: 75.8965% took: 160.4016330242157 seconds
+Training ended after 10 ! Best validation accuracy: 75.8965%
+```
+
+#### Size 256
+
+Config:
+
+```python
+# Config:
+batch_size = 256
+learning_rate = 0.001
+
+hidden_size = 256
+n_layers = 2
+train_classes = classes[:]
+
+# Use None instead of (n_filters, filter_size) to disable convolution
+# Note that conv1 = None forces conv2 = None automatically
+conv1 = None # (128, 5)
+conv2 = None
+bidirectional = True
+
+N_train = 20000
+N_val = N_train // 5
+N_test = N_val
+N_test_reserved = 20000
+max_padding = 100
+n_epochs = 10
+```
+
+Results:
+```
+```
