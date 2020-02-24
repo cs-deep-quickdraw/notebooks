@@ -234,10 +234,11 @@ def extract_dataset(
             X_test.append(next(drawings))
             y_test.append(c)
 
-        print(f"\rdone extracting class: {cls}: {1 + c} / {len(classes)}", end="")
+        print(f"\rdone extracting class: {cls.rjust(20)}: {1 + c} / {len(classes)}", end="")
 
         drawings.close()
 
+    print("")
     def norm(X):
         return torch.FloatTensor(
             torch.transpose(pad_sequence(X, batch_first=True), 1, 2)
