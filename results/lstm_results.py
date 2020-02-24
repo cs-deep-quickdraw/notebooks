@@ -43,20 +43,21 @@ for child in ast:
                 ".".join(title).lower().replace(" ", "_").replace("results.", "")
             ] = parse_scores(child["text"])
 
-plt.subplot(2, 1, 1)
+fig = plt.figure()
+ax_loss = fig.add_subplot(2, 1, 1)
 for key, (loss, _) in results.items():
-    plt.plot(loss, label=key)
-plt.ylabel("training's cross entropy loss")
-plt.grid(linestyle="--", linewidth=1)
+    ax_loss.plot(loss, label=key)
+ax_loss.set_ylabel("training's cross entropy loss")
+ax_loss.grid(linestyle="--", linewidth=1)
 
-plt.legend()
+ax_loss.legend()
 
-plt.subplot(2, 1, 2)
+ax_acc = fig.add_subplot(2, 1, 2)
 for key, (_, acc) in results.items():
-    plt.plot(acc, label=key)
-plt.ylabel("validation's accuracy")
-plt.xlabel("epoch")
+    ax_acc.plot(acc, label=key)
+ax_acc.set_ylabel("validation's accuracy")
+ax_acc.set_xlabel("epoch")
 
-plt.grid(linestyle="--", linewidth=1)
+ax_acc.grid(linestyle="--", linewidth=1)
 
 plt.show()
