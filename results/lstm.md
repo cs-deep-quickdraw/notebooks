@@ -411,3 +411,91 @@ Epoch: 9/10, loss: 0.35719512086602434, validation accuracy: 83.512% took: 552.0
 Epoch: 10/10, loss: 0.3381216313070575, validation accuracy: 83.45275% took: 551.1745088100433 seconds
 Training ended after 10 ! Best validation accuracy: 83.512%
 ```
+
+## Conv1D LSTM
+
+### 1 layer
+
+#### Conv 128_5 size 64
+
+Config:
+
+```python
+# Config:
+batch_size = 256
+learning_rate = 0.001
+
+hidden_size = 64
+n_layers = 1
+train_classes = classes[:]
+
+# Use None instead of (n_filters, filter_size) to disable convolution
+# Note that conv1 = None forces conv2 = None automatically
+conv1 = (128, 5)
+conv2 = None
+bidirectional = True
+
+N_train = 20000
+N_val = N_train // 5
+N_test = N_val
+N_test_reserved = 20000
+max_padding = 100
+n_epochs = 10
+```
+
+Results:
+```
+Epoch: 1/10, loss: 2.4521238011677897, validation accuracy: 42.35875% took: 140.67531204223633 seconds
+Epoch: 2/10, loss: 1.480470366893284, validation accuracy: 49.781% took: 139.75940108299255 seconds
+Epoch: 3/10, loss: 1.2990560588451563, validation accuracy: 51.917% took: 139.11033821105957 seconds
+Epoch: 4/10, loss: 1.2144290166857543, validation accuracy: 54.22025% took: 139.14547657966614 seconds
+Epoch: 5/10, loss: 1.161270840165253, validation accuracy: 56.294% took: 138.57833814620972 seconds
+Epoch: 6/10, loss: 1.12227923897093, validation accuracy: 56.4285% took: 138.07167291641235 seconds
+Epoch: 7/10, loss: 1.0923172702911979, validation accuracy: 57.21075% took: 138.1560935974121 seconds
+Epoch: 8/10, loss: 1.0696373967985238, validation accuracy: 57.8435% took: 140.04968333244324 seconds
+Epoch: 9/10, loss: 1.049920146655719, validation accuracy: 58.2105% took: 138.90221500396729 seconds
+Epoch: 10/10, loss: 1.0328531821558635, validation accuracy: 59.2585% took: 138.53191256523132 seconds
+Training ended after 10 ! Best validation accuracy: 59.2585%
+```
+
+#### Conv 128_5 size 256
+
+Config:
+
+```python
+# Config:
+batch_size = 256
+learning_rate = 0.001
+
+hidden_size = 256
+n_layers = 1
+train_classes = classes[:]
+
+# Use None instead of (n_filters, filter_size) to disable convolution
+# Note that conv1 = None forces conv2 = None automatically
+conv1 = (128, 5)
+conv2 = None
+bidirectional = False
+
+N_train = 20000
+N_val = N_train // 5
+N_test = N_val
+N_test_reserved = 20000
+max_padding = 100
+n_epochs = 10
+```
+
+Results:
+```
+Epoch: 1/10, loss: 1.7443331885197457, validation accuracy: 65.8505% took: 223.55910396575928 seconds
+Epoch: 2/10, loss: 0.8100666383439411, validation accuracy: 72.96875% took: 224.83714652061462 seconds
+Epoch: 3/10, loss: 0.6820556036522427, validation accuracy: 76.34125% took: 223.60430526733398 seconds
+Epoch: 4/10, loss: 0.6185645249571032, validation accuracy: 77.35375% took: 224.03959131240845 seconds
+Epoch: 5/10, loss: 0.5787777861025488, validation accuracy: 78.771% took: 223.8713116645813 seconds
+Epoch: 6/10, loss: 0.5516596786552914, validation accuracy: 79.35025% took: 224.39657926559448 seconds
+Epoch: 7/10, loss: 0.5306601781161085, validation accuracy: 79.93475% took: 223.9412078857422 seconds
+Epoch: 8/10, loss: 0.5149018921842041, validation accuracy: 80.4145% took: 224.26603865623474 seconds
+Epoch: 9/10, loss: 0.5012614039121784, validation accuracy: 80.6875% took: 224.92499136924744 seconds
+Epoch: 10/10, loss: 0.4899136547157039, validation accuracy: 80.99125% took: 223.96182942390442 seconds
+Training ended after 10 ! Best validation accuracy: 80.99125%
+```
