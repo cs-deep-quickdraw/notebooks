@@ -25,6 +25,7 @@ conda env create -f config/environment.yml --force
 
 # Save environment description
 source activate quickdraw
+bash config/config_env.sh
 conda env export > config/environment.yml
 
 # Download classes data
