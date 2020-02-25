@@ -193,7 +193,7 @@ conv1 = (256, 5)
 conv2 = (256, 3)
 bidirectional = True
 
-N_train = 85000
+N_train = 76000
 N_val = N_train // 5
 N_test = N_val
 N_test_reserved = 20000
@@ -217,22 +217,22 @@ def extract_dataset(
     for c, cls in enumerate(classes):
         drawings = unpack_drawings("data/" + cls + ".bin", max_padding)
 
-        # TODO: better way of doing this
-        for _ in range(samples_train):
-            X_train.append(next(drawings))
-            y_train.append(c)
-
         # TODO: itertools
         for _ in range(max(0, test_reserved - samples_train)):
             next(drawings)
+
+        for _ in range(samples_test):
+            X_test.append(next(drawings))
+            y_test.append(c)
 
         for _ in range(samples_val):
             X_val.append(next(drawings))
             y_val.append(c)
 
-        for _ in range(samples_test):
-            X_test.append(next(drawings))
-            y_test.append(c)
+        # TODO: better way of doing this
+        for _ in range(samples_train):
+            X_train.append(next(drawings))
+            y_train.append(c)
 
         print(f"\rdone extracting class: {cls.rjust(20)}: {1 + c} / {len(classes)}", end="")
 
