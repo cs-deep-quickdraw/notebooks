@@ -136,7 +136,7 @@ img_size = 64
 train_classes = classes[:]
 
 
-N_train = 30000
+N_train = 34000
 N_val = N_train // 5
 N_test = 20000
 N_test_reserved = 20000
