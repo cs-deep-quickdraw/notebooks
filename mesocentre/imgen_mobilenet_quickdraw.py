@@ -158,6 +158,10 @@ def extract_dataset(samples_train, samples_val, samples_test, test_reserved, cla
   for c, cls in enumerate(classes):
     drawings = unpack_drawings(test_reserved - samples_train, 'data/' + cls + '.bin', size=img_size)
 
+    for _ in range(samples_test):
+      X_test.append(next(drawings))
+      y_test.append(c)
+
     # TODO: better way of doing this
     for _ in range(samples_train):
       X_train.append(next(drawings))
@@ -167,11 +171,6 @@ def extract_dataset(samples_train, samples_val, samples_test, test_reserved, cla
       X_val.append(next(drawings))
       y_val.append(c)
 
-    for _ in range(samples_test):
-      X_test.append(next(drawings))
-      y_test.append(c)
-  
-    
     print(f"\rdone extracting class: {cls}: {1 + c} / {len(classes)}", end='')
 
     drawings.close()
@@ -280,4 +279,3 @@ optimizer = optim.Adam(model.parameters(), lr = learning_rate)
 
 best_model, losses, accs = train_model(model, optimizer, loss_function, train_loader, val_loader, n_epochs)
 
-torch.save(best_model.state_dict(), "mobilenet_imgen.model")
