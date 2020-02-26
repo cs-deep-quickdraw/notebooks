@@ -676,3 +676,31 @@ Epoch: 9/10, loss: 0.39086888840954387, validation accuracy: 82.508% took: 661.7
 Epoch: 10/10, loss: 0.37362678031655594, validation accuracy: 82.7225% took: 662.1078498363495 seconds
 Training ended after 10 ! Best validation accuracy: 82.784%
 ```
+
+#### Conv 256_5 Conv 256_3 Size 256 all dataset
+
+Results:
+```
+Epoch: 1/20, loss: 0.8977765124025161, validation accuracy: 81.04190789473684% took: 2578.4268980026245 seconds
+Epoch: 2/20, loss: 0.4893854798543802, validation accuracy: 84.74578947368421% took: 2589.1363003253937 seconds
+Epoch: 3/20, loss: 0.4322637861393286, validation accuracy: 85.78394736842105% took: 2607.142402648926 seconds
+Epoch: 4/20, loss: 0.40336743451813517, validation accuracy: 86.69552631578948% took: 2597.696293115616 seconds
+Epoch: 5/20, loss: 0.3838846281314396, validation accuracy: 86.77006578947369% took: 2592.3787355422974 seconds
+Epoch: 6/20, loss: 0.36994369611107925, validation accuracy: 87.185% took: 2588.8523235321045 seconds
+Epoch: 7/20, loss: 0.3580974556532784, validation accuracy: 87.16203947368422% took: 2605.101353406906 seconds
+Epoch: 8/20, loss: 0.348914482592392, validation accuracy: 87.22776315789474% took: 2597.8685224056244 seconds
+Epoch: 9/20, loss: 0.3412577998715249, validation accuracy: 87.62743421052632% took: 2586.1124682426453 seconds
+Epoch: 10/20, loss: 0.3349219043424182, validation accuracy: 87.53440789473684% took: 2592.396100282669 seconds
+Epoch: 11/20, loss: 0.32902332258189154, validation accuracy: 87.54552631578947% took: 2584.8693466186523 seconds
+Epoch: 12/20, loss: 0.3227261560952742, validation accuracy: 87.72572368421052% took: 2586.1872086524963 seconds
+Epoch: 13/20, loss: 0.3171522105988532, validation accuracy: 87.8621052631579% took: 2591.189444065094 seconds
+Epoch: 14/20, loss: 0.3122778429447243, validation accuracy: 87.86098684210526% took: 2593.339725971222 seconds
+Epoch: 15/20, loss: 0.3077770005510048, validation accuracy: 87.96967105263158% took: 2585.960666656494 seconds
+Epoch: 16/20, loss: 0.30343102741679334, validation accuracy: 87.8471052631579% took: 2601.619851589203 seconds
+Epoch: 17/20, loss: 0.30020415274528234, validation accuracy: 87.76105263157895% took: 2593.150027513504 seconds
+Epoch: 18/20, loss: 0.2963183523860703, validation accuracy: 87.83861842105263% took: 2587.088585615158 seconds
+Epoch: 19/20, loss: 0.2926984957221828, validation accuracy: 87.67842105263158% took: 2587.9735493659973 seconds
+Epoch: 20/20, loss: 0.2900448494380763, validation accuracy: 87.51361842105263% took: 2591.950215816498 seconds
+Training ended after 20 ! Best validation accuracy: 87.96967105263158%
+Test accuracy: 87.44263157894737%
+```

@@ -6,7 +6,7 @@ Models trained by generating the images from the strokes
 
 ## 64x64 Images
 
-### Pretrained mobilenet 8k per class
+### Pretrained mobilenet 12k per class
 
 Config:
 ```python
@@ -18,23 +18,29 @@ img_size = 64
 train_classes = classes[:]
 
 
-N_train = 8000
+N_train = 12000
 N_val = N_train // 5
 # N_test = N_val
 N_test = 0
 N_test_reserved = 20000
 
-n_epochs = 5
+n_epochs = 10
 ```
 
 Results:
 
 ```
-Epoch: 1/5, loss: 0.7777804596445768, validation accuracy: 79.18075% took: 3607.68372511863708 seconds
-Epoch: 2/5, loss: 0.6005541498565674, validation accuracy: 84.67375% took: 3607.0781791210175 seconds
-Epoch: 3/5, loss: 0.5505085116481782, validation accuracy: 85.44875% took: 3606.7783970832825 seconds
-Epoch: 4/5, loss: 0.5162633287239075, validation accuracy: 85.85625% took: 3621.3950605392456 seconds
-Epoch: 5/5, loss: 0.4910012597179413, validation accuracy: 86.186875% took: 3634.4329283237457 seconds
+Epoch: 1/10, loss: 0.7174502165269729, validation accuracy: 84.28583333333333% took: 509.21234345436096 seconds
+Epoch: 2/10, loss: 0.5585970539574229, validation accuracy: 86.11083333333333% took: 509.7822926044464 seconds
+Epoch: 3/10, loss: 0.509766736109153, validation accuracy: 86.6775% took: 510.26687264442444 seconds
+Epoch: 4/10, loss: 0.4794071838005411, validation accuracy: 87.03416666666666% took: 515.2203142642975 seconds
+Epoch: 5/10, loss: 0.45612751672508467, validation accuracy: 87.41625% took: 508.9523000717163 seconds
+Epoch: 6/10, loss: 0.4380846023495999, validation accuracy: 87.62833333333333% took: 506.36477851867676 seconds
+Epoch: 7/10, loss: 0.42134666496906875, validation accuracy: 87.99833333333333% took: 508.7484474182129 seconds
+Epoch: 8/10, loss: 0.4074481981409135, validation accuracy: 87.99333333333334% took: 505.14482402801514 seconds
+Epoch: 9/10, loss: 0.39537988634900834, validation accuracy: 87.99416666666667% took: 498.74235486984253 seconds
+Epoch: 10/10, loss: 0.38354334374412946, validation accuracy: 88.17833333333333% took: 498.92996621131897 seconds
+Training ended after 10 ! Best validation accuracy: 88.17833333333333%
 ```
 
 ### Pretrained resnet 3k per class
@@ -48,7 +54,6 @@ learning_rate = 0.001
 img_size = 64
 train_classes = classes[:]
 
-preprocessor = resnet_preprocess
 N_train = 3000
 N_val = N_train // 5
 # N_test = N_val
