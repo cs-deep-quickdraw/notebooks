@@ -250,7 +250,7 @@ def train_model(model, opt, loss_fn, loader, v_loader, n_epochs):
     if val_acc > best_acc:
       best_acc = val_acc
       best_model = copy.deepcopy(model.state_dict())
-      torch.save(best_model, f"{epoch}_acc_{val_acc}.model")
+      torch.save(best_model, f"imgen_resnet_{epoch}_acc_{val_acc}.model")
 
     print(f"\rEpoch: {epoch+1}/{n_epochs}, loss: {mean_loss}, validation accuracy: {val_acc}% took: {time.time() - start} seconds")
 
