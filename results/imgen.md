@@ -63,6 +63,7 @@ Epoch: 13/15, loss: 0.35627403657307305, validation accuracy: 89.50147058823529%
 Epoch: 14/15, loss: 0.35071376790336733, validation accuracy: 89.55720588235295% took: 1512.349261522293 seconds
 Epoch: 15/15, loss: 0.3459617089182295, validation accuracy: 89.53544117647058% took: 1513.7341010570526 seconds
 Training ended after 15 ! Best validation accuracy: 89.55720588235295%
+Test accuracy: 91.0264%
 ```
 
 ### Pretrained resnet 3k per class
