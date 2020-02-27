@@ -43,6 +43,19 @@ Epoch: 10/10, loss: 0.38354334374412946, validation accuracy: 88.17833333333333%
 Training ended after 10 ! Best validation accuracy: 88.17833333333333%
 ```
 
+### Pretrained mobilenet 34k per class
+
+Results:
+```
+Epoch: 1/10, loss: 0.5553819374581199, validation accuracy: 87.71558823529412% took: 12868.160160541534 seconds
+Epoch: 2/10, loss: 0.4477839009686326, validation accuracy: 88.96764705882353% took: 12878.031504154205 seconds
+Epoch: 3/10, loss: 0.4164512191808278, validation accuracy: 89.24573529411765% took: 12815.621380090714 seconds
+Epoch: 4/10, loss: 0.3973323991253977, validation accuracy: 89.69235294117647% took: 12831.34978890419 seconds
+Epoch: 5/10, loss: 0.3831660436787564, validation accuracy: 89.87838235294117% took: 12845.545823812485 seconds
+Epoch: 6/10, loss: 0.3722130690321561, validation accuracy: 90.08808823529412% took: 12859.492151021957 seconds
+batch: 19172, current loss: 0.3624596437682209=>> PBS: job killed: walltime 86489 exceeded limit 86400
+```
+
 ### Pretrained resnet 3k per class
 
 Config:
@@ -112,4 +125,52 @@ Epoch: 8/10, loss: 0.21162572076366165, validation accuracy: 87.25791666666667% 
 Epoch: 9/10, loss: 0.18296313381502755, validation accuracy: 87.09958333333333% took: 479.86763405799866 seconds
 Epoch: 10/10, loss: 0.16095749204088347, validation accuracy: 86.95291666666667% took: 476.1966917514801 seconds
 Training ended after 10 ! Best validation accuracy: 87.63583333333334%
+```
+
+### Pretrained resnet 34k per class
+
+Results:
+```
+Epoch: 1/15, loss: 0.5753659192983724, validation accuracy: 87.15985294117647% took: 1512.9524774551392 seconds
+Epoch: 2/15, loss: 0.44130522037841274, validation accuracy: 88.4885294117647% took: 1518.2521574497223 seconds
+Epoch: 3/15, loss: 0.3908435369095266, validation accuracy: 88.90544117647059% took: 1517.0163519382477 seconds
+Epoch: 4/15, loss: 0.3525028056311528, validation accuracy: 88.97161764705882% took: 1518.7357697486877 seconds
+Epoch: 5/15, loss: 0.31745304685535336, validation accuracy: 89.21602941176471% took: 1517.490399837494 seconds
+Epoch: 6/15, loss: 0.2843009522545142, validation accuracy: 89.03735294117647% took: 1514.675742149353 seconds
+Epoch: 7/15, loss: 0.2535711930566318, validation accuracy: 89.02838235294118% took: 1514.9144098758698 seconds
+Epoch: 8/15, loss: 0.22533909949949305, validation accuracy: 88.88941176470588% took: 1515.028909444809 seconds
+Epoch: 9/15, loss: 0.20110118082456516, validation accuracy: 88.70132352941177% took: 1515.2387645244598 seconds
+Epoch: 10/15, loss: 0.18063540006062878, validation accuracy: 88.51794117647059% took: 1515.2414858341217 seconds
+Epoch: 11/15, loss: 0.16378694288112855, validation accuracy: 88.505% took: 1516.1395182609558 seconds
+Epoch: 12/15, loss: 0.14962784641703789, validation accuracy: 88.38382352941177% took: 1515.1115653514862 seconds
+Epoch: 13/15, loss: 0.13731823968684936, validation accuracy: 88.2885294117647% took: 1517.806363105774 seconds
+batch: 6690, current loss: 0.11876187290083089
+Epoch: 14/15, loss: 0.12689112933562105, validation accuracy: 88.27588235294118% took: 1518.3629105091095 seconds
+Epoch: 15/15, loss: 0.11781168516129008, validation accuracy: 88.20117647058824% took: 1517.6389863491058 seconds
+Training ended after 15 ! Best validation accuracy: 89.21602941176471%
+```
+
+## 96x96 Images
+
+### Pretrained resnet 34k per class
+
+Results:
+```
+Epoch: 1/15, loss: 0.5753659192983724, validation accuracy: 87.15985294117647% took: 1512.9524774551392 seconds
+Epoch: 2/15, loss: 0.44130522037841274, validation accuracy: 88.4885294117647% took: 1518.2521574497223 seconds
+Epoch: 3/15, loss: 0.3908435369095266, validation accuracy: 88.90544117647059% took: 1517.0163519382477 seconds
+Epoch: 4/15, loss: 0.3525028056311528, validation accuracy: 88.97161764705882% took: 1518.7357697486877 seconds
+Epoch: 5/15, loss: 0.31745304685535336, validation accuracy: 89.21602941176471% took: 1517.490399837494 seconds
+Epoch: 6/15, loss: 0.2843009522545142, validation accuracy: 89.03735294117647% took: 1514.675742149353 seconds
+Epoch: 7/15, loss: 0.2535711930566318, validation accuracy: 89.02838235294118% took: 1514.9144098758698 seconds
+Epoch: 8/15, loss: 0.22533909949949305, validation accuracy: 88.88941176470588% took: 1515.028909444809 seconds
+Epoch: 9/15, loss: 0.20110118082456516, validation accuracy: 88.70132352941177% took: 1515.2387645244598 seconds
+Epoch: 10/15, loss: 0.18063540006062878, validation accuracy: 88.51794117647059% took: 1515.2414858341217 seconds
+Epoch: 11/15, loss: 0.16378694288112855, validation accuracy: 88.505% took: 1516.1395182609558 seconds
+Epoch: 12/15, loss: 0.14962784641703789, validation accuracy: 88.38382352941177% took: 1515.1115653514862 seconds
+Epoch: 13/15, loss: 0.13731823968684936, validation accuracy: 88.2885294117647% took: 1517.806363105774 seconds
+batch: 6690, current loss: 0.11876187290083089
+Epoch: 14/15, loss: 0.12689112933562105, validation accuracy: 88.27588235294118% took: 1518.3629105091095 seconds
+Epoch: 15/15, loss: 0.11781168516129008, validation accuracy: 88.20117647058824% took: 1517.6389863491058 seconds
+Training ended after 15 ! Best validation accuracy: 89.21602941176471%
 ```
