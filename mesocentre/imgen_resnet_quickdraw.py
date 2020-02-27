@@ -290,4 +290,4 @@ optimizer = optim.Adam(model.parameters(), lr = learning_rate)
 
 best_model, losses, accs = train_model(model, optimizer, loss_function, train_loader, val_loader, n_epochs)
 torch.save(best_model, "imgen_resnet.model")
-evaluate_model(model, test_loader)
+print("Test accuracy", evaluate_model(model, test_loader))
