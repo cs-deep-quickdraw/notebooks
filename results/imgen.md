@@ -183,7 +183,7 @@ Epoch: 15/15, loss: 0.09259502314169399, validation accuracy: 88.59691176470588%
 Training ended after 15 ! Best validation accuracy: 89.57485294117647%
 ```
 
-### Pretrained resnet 34k per class
+### Pretrained mobilenet 34k per class
 
 ```
 Epoch: 1/15, loss: 0.5604046881849589, validation accuracy: 87.38867647058824% took: 2716.960978269577 seconds
