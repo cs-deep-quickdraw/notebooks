@@ -43,7 +43,7 @@ Epoch: 10/10, loss: 0.38354334374412946, validation accuracy: 88.17833333333333%
 Training ended after 10 ! Best validation accuracy: 88.17833333333333%
 ```
 
-### Pretrained mobilenet 34k per class
+### mobilenet
 
 Results:
 ```
@@ -136,7 +136,7 @@ Epoch: 10/10, loss: 0.16095749204088347, validation accuracy: 86.95291666666667%
 Training ended after 10 ! Best validation accuracy: 87.63583333333334%
 ```
 
-### Pretrained resnet 34k per class
+### resnet
 
 Results:
 ```
@@ -161,7 +161,29 @@ Training ended after 15 ! Best validation accuracy: 89.21602941176471%
 
 ## 96x96 Images
 
-### Pretrained resnet 34k per class
+### mobilenet
+
+```
+Epoch: 1/15, loss: 0.5604046881849589, validation accuracy: 87.38867647058824% took: 2716.960978269577 seconds
+Epoch: 2/15, loss: 0.4544943810954293, validation accuracy: 88.56426470588235% took: 2716.032474756241 seconds
+Epoch: 3/15, loss: 0.42179870887740406, validation accuracy: 88.8714705882353% took: 2717.5487916469574 seconds
+Epoch: 4/15, loss: 0.4019094919024363, validation accuracy: 89.29882352941176% took: 2718.473156452179 seconds
+Epoch: 5/15, loss: 0.386705713670551, validation accuracy: 89.57220588235295% took: 2721.1513018608093 seconds
+Epoch: 6/15, loss: 0.3745493240336969, validation accuracy: 89.64088235294118% took: 2715.1425607204437 seconds
+Epoch: 7/15, loss: 0.3648871195298813, validation accuracy: 89.76235294117647% took: 2711.732768535614 seconds
+Epoch: 8/15, loss: 0.35601978837555204, validation accuracy: 89.85779411764706% took: 2707.23126244545 seconds
+Epoch: 9/15, loss: 0.3483126585252169, validation accuracy: 89.95897058823529% took: 2704.839390516281 seconds
+Epoch: 10/15, loss: 0.34099545054717734, validation accuracy: 89.95264705882353% took: 2702.492777109146 seconds
+Epoch: 11/15, loss: 0.3345430214830307, validation accuracy: 89.99132352941176% took: 2703.0311698913574 seconds
+Epoch: 12/15, loss: 0.32811356978169803, validation accuracy: 90.01764705882353% took: 2702.7448806762695 seconds
+Epoch: 13/15, loss: 0.3224848831360499, validation accuracy: 90.05294117647058% took: 2703.1274297237396 seconds
+Epoch: 14/15, loss: 0.31697401328652114, validation accuracy: 90.09088235294118% took: 2704.2591519355774 seconds
+Epoch: 15/15, loss: 0.3113867956962666, validation accuracy: 90.10352941176471% took: 2699.4883744716644 seconds
+Training ended after 15 ! Best validation accuracy: 90.10352941176471%
+Test accuracy: 92.17591666666667%
+```
+
+### resnet
 
 Results:
 ```
@@ -183,23 +205,3 @@ Epoch: 15/15, loss: 0.09259502314169399, validation accuracy: 88.59691176470588%
 Training ended after 15 ! Best validation accuracy: 89.57485294117647%
 ```
 
-### Pretrained mobilenet 34k per class
-
-```
-Epoch: 1/15, loss: 0.5604046881849589, validation accuracy: 87.38867647058824% took: 2716.960978269577 seconds
-Epoch: 2/15, loss: 0.4544943810954293, validation accuracy: 88.56426470588235% took: 2716.032474756241 seconds
-Epoch: 3/15, loss: 0.42179870887740406, validation accuracy: 88.8714705882353% took: 2717.5487916469574 seconds
-Epoch: 4/15, loss: 0.4019094919024363, validation accuracy: 89.29882352941176% took: 2718.473156452179 seconds
-Epoch: 5/15, loss: 0.386705713670551, validation accuracy: 89.57220588235295% took: 2721.1513018608093 seconds
-Epoch: 6/15, loss: 0.3745493240336969, validation accuracy: 89.64088235294118% took: 2715.1425607204437 seconds
-Epoch: 7/15, loss: 0.3648871195298813, validation accuracy: 89.76235294117647% took: 2711.732768535614 seconds
-Epoch: 8/15, loss: 0.35601978837555204, validation accuracy: 89.85779411764706% took: 2707.23126244545 seconds
-Epoch: 9/15, loss: 0.3483126585252169, validation accuracy: 89.95897058823529% took: 2704.839390516281 seconds
-Epoch: 10/15, loss: 0.34099545054717734, validation accuracy: 89.95264705882353% took: 2702.492777109146 seconds
-Epoch: 11/15, loss: 0.3345430214830307, validation accuracy: 89.99132352941176% took: 2703.0311698913574 seconds
-Epoch: 12/15, loss: 0.32811356978169803, validation accuracy: 90.01764705882353% took: 2702.7448806762695 seconds
-Epoch: 13/15, loss: 0.3224848831360499, validation accuracy: 90.05294117647058% took: 2703.1274297237396 seconds
-Epoch: 14/15, loss: 0.31697401328652114, validation accuracy: 90.09088235294118% took: 2704.2591519355774 seconds
-Epoch: 15/15, loss: 0.3113867956962666, validation accuracy: 90.10352941176471% took: 2699.4883744716644 seconds
-Training ended after 15 ! Best validation accuracy: 90.10352941176471%
-```
