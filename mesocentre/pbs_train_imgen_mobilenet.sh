@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #PBS -S /bin/bash
-#PBS -N quickdraw_train
+#PBS -N quickdraw_mobile64
 #PBS -j oe
 #PBS -l walltime=24:00:00
 #PBS -q gpuq -l select=1:ncpus=12:ngpus=1:gputype=p100:mem=170gb

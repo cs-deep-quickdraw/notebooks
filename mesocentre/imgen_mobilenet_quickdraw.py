@@ -111,6 +111,7 @@ mobilenet_preprocess = transforms.Compose([
     transforms.Resize(224),
     transforms.ToTensor(),
     transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]),
+    
 ])
 
 class DrawDataset(Dataset):
@@ -135,53 +136,49 @@ learning_rate = 0.001
 img_size = 64
 train_classes = classes[:]
 
-
+preprocessor = mobilenet_preprocess
 N_train = 34000
 N_val = N_train // 5
+# N_test = N_val
 N_test = 20000
 N_test_reserved = 20000
 
-n_epochs = 10
+n_epochs = 15
 
 from itertools import islice
 from torch.nn.utils.rnn import pad_sequence
 
 
 def extract_dataset(samples_train, samples_val, samples_test, test_reserved, classes, preprocess, img_size=64):
-  X_train = []
-  X_val = []
-  X_test = []
+  N = len(classes)
+  X_train = np.zeros((N * samples_train, img_size, img_size, 3), dtype=np.uint8)
+  X_val = np.zeros((N * samples_val, img_size, img_size, 3), dtype=np.uint8)
+  X_test = np.zeros((N * samples_test, img_size, img_size, 3), dtype=np.uint8)
   y_train = []
   y_val = []
   y_test = []
 
+
   for c, cls in enumerate(classes):
     drawings = unpack_drawings(test_reserved - samples_train, 'data/' + cls + '.bin', size=img_size)
 
-    for _ in range(samples_test):
-      X_test.append(next(drawings))
+    for i in range(samples_test):
+      X_test[c*samples_test + i] = next(drawings)
       y_test.append(c)
 
     # TODO: better way of doing this
-    for _ in range(samples_train):
-      X_train.append(next(drawings))
+    for i in range(samples_train):
+      X_train[c*samples_train + i] = next(drawings)
       y_train.append(c)
 
-    for _ in range(samples_val):
-      X_val.append(next(drawings))
+    for i in range(samples_val):
+      X_val[c*samples_val + i] = next(drawings)
       y_val.append(c)
 
     print(f"\rdone extracting class: {cls}: {1 + c} / {len(classes)}", end='')
 
     drawings.close()
     
-
-  def norm(X):
-    return np.array(X)
-
-  X_train = norm(X_train)
-  X_val = norm(X_val)
-  X_test = norm(X_test)
   print("training shape", X_train.shape)
   print("validation shape", X_val.shape)
   print("testing shape", X_test.shape)
@@ -248,7 +245,7 @@ def train_model(model, opt, loss_fn, loader, v_loader, n_epochs):
     if val_acc > best_acc:
       best_acc = val_acc
       best_model = copy.deepcopy(model.state_dict())
-      torch.save(best_model, f"{epoch}_acc_{val_acc}.model")
+      torch.save(best_model, f"imgen_mobilenet_{epoch}_acc_{val_acc}.model")
 
     print(f"\rEpoch: {epoch+1}/{n_epochs}, loss: {mean_loss}, validation accuracy: {val_acc}% took: {time.time() - start} seconds")
 
@@ -256,7 +253,7 @@ def train_model(model, opt, loss_fn, loader, v_loader, n_epochs):
  
   return best_model, losses, accs
 
-train_dataset, val_dataset, test_dataset = extract_dataset(N_train, N_val, N_test, N_test_reserved, train_classes, mobilenet_preprocess, img_size)
+train_dataset, val_dataset, test_dataset = extract_dataset(N_train, N_val, N_test, N_test_reserved, train_classes, preprocessor, img_size)
 
 train_loader = torch.utils.data.DataLoader(dataset=train_dataset, batch_size=batch_size, shuffle=True)
 val_loader = torch.utils.data.DataLoader(dataset=val_dataset, batch_size=batch_size, shuffle=False)
@@ -272,10 +269,12 @@ model.classifier[1] = nn.Linear(
     bias=True
 )
 
+
 model.to(device) # puts model on GPU / CPU
 model.train()
 loss_function = nn.CrossEntropyLoss()
 optimizer = optim.Adam(model.parameters(), lr = learning_rate)
 
 best_model, losses, accs = train_model(model, optimizer, loss_function, train_loader, val_loader, n_epochs)
-
+torch.save(best_model, "imgen_mobilenet.model")
+evaluate_model(model, test_loader)
