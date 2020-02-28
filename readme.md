@@ -25,4 +25,6 @@ For a detailed list of dependencies, you can have a look at [this file](./mesoce
 
 Results can be found in the `results/` directory in `markdown` files, there is also a helper script to generate graphs of results.
 
-Finally in the `mesocentre/` are the configuration for running the training jobs on a [PBS](https://en.wikipedia.org/wiki/Portable_Batch_System) queue, as well as a [conda](https://docs.conda.io/en/latest/) environment configuration
+In the `mesocentre/` are the configuration for running the training jobs on a [PBS](https://en.wikipedia.org/wiki/Portable_Batch_System) queue, as well as a [conda](https://docs.conda.io/en/latest/) environment configuration.
+
+Finally the report source code can be found [here](https://github.com/cs-deep-quickdraw/report/tree/master)
