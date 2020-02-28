@@ -1,6 +1,6 @@
 # Notebooks
 
-This repository contains the codes used for the study on the quickdraw dataset conducted for the CentraleSupélec Deep Learning class.
+This repository contains the codes used for the study on the quickdraw dataset conducted for the CentraleSupélec's Deep Learning class.
 
 ## Introduction
 
