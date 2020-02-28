@@ -205,5 +205,6 @@ Epoch: 13/15, loss: 0.10981412574538349, validation accuracy: 88.72808823529412%
 Epoch: 14/15, loss: 0.10049851115366945, validation accuracy: 88.72323529411764% took: 2248.5140697956085 seconds
 Epoch: 15/15, loss: 0.09259502314169399, validation accuracy: 88.59691176470588% took: 2253.4305210113525 seconds
 Training ended after 15 ! Best validation accuracy: 89.57485294117647%
+Test accuracy: 92.43485%
 ```
 
