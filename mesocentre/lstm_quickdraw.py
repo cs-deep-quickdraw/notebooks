@@ -332,7 +332,6 @@ def train_model(model, opt, loss_fn, loader, v_loader, n_epochs):
 
 from torch.nn.utils.rnn import pad_sequence
 
-# TODO: really take the last 2k images for testing
 train_dataset, val_dataset, test_dataset = extract_dataset(
     N_train, N_val, N_test, N_test_reserved, train_classes, max_padding=max_padding
 )
