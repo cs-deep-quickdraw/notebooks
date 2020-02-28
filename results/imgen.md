@@ -43,7 +43,7 @@ Epoch: 10/10, loss: 0.38354334374412946, validation accuracy: 88.17833333333333%
 Training ended after 10 ! Best validation accuracy: 88.17833333333333%
 ```
 
-### mobilenet
+### pretrained mobilenet 34k per class
 
 Results:
 ```
@@ -137,7 +137,7 @@ Epoch: 10/10, loss: 0.16095749204088347, validation accuracy: 86.95291666666667%
 Training ended after 10 ! Best validation accuracy: 87.63583333333334%
 ```
 
-### resnet
+### pretrained resnet 34k per class 
 
 Results:
 ```
@@ -163,7 +163,7 @@ Test accuracy: 92.1785%
 
 ## 96x96 Images
 
-### mobilenet
+### pretrained mobilenet 34k per class
 
 ```
 Epoch: 1/15, loss: 0.5604046881849589, validation accuracy: 87.38867647058824% took: 2716.960978269577 seconds
@@ -185,7 +185,7 @@ Training ended after 15 ! Best validation accuracy: 90.10352941176471%
 Test accuracy: 92.17591666666667%
 ```
 
-### resnet
+### pretrained resnet 34k per class
 
 Results:
 ```
