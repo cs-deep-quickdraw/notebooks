@@ -158,6 +158,7 @@ batch: 6690, current loss: 0.11876187290083089
 Epoch: 14/15, loss: 0.12689112933562105, validation accuracy: 88.27588235294118% took: 1518.3629105091095 seconds
 Epoch: 15/15, loss: 0.11781168516129008, validation accuracy: 88.20117647058824% took: 1517.6389863491058 seconds
 Training ended after 15 ! Best validation accuracy: 89.21602941176471%
+Test accuracy: 92.1785%
 ```
 
 ## 96x96 Images
