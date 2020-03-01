@@ -13,7 +13,7 @@ The goal of the project was to train models to classify elements from the [quick
 The notebooks are located in the `notebooks/` directory:
 - [lstm_quickdraw.ipynb](./notebooks/lstm_quickdraw.ipynb) is used for the training of LSTMs on the strokes data
 - [strokes2image_quickdraw.ipynb](./notebooks/strokes2image_quickdraw.ipynb) is used for the training of CNNs on images generated from strokes
-- TODO: desc of CNN notebook
+- [cnn_28x28bitmaps_training.ipynb](./notebooks/cnn_28x28bitmaps_training.ipynb) is used for the training of CNNs on grayscale 28x28 bitmaps
 
 To be able to run the notebooks you will need the following dependencies:
 - pytorch
@@ -23,7 +23,7 @@ To be able to run the notebooks you will need the following dependencies:
 
 For a detailed list of dependencies, you can have a look at [this file](./mesocentre/config/environment.yml)
 
-Results can be found in the `results/` directory in `markdown` files, there is also a helper script to generate graphs of results.
+Results can be found in the `results/` directory in `markdown` files, there is also a helper script to generate graphs of results. For CNNs on bitmaps, results are in two notebooks: [cnn_bitmaps_plot_train_val_results.ipynb](./results/cnn_bitmaps_plot_train_val_results.ipynb) for training and validation results and [cnn_bitmaps_test_results.ipynb](./results/cnn_bitmaps_test_results.ipynb) for test results.
 
 In the `mesocentre/` are the configuration for running the training jobs on a [PBS](https://en.wikipedia.org/wiki/Portable_Batch_System) queue, as well as a [conda](https://docs.conda.io/en/latest/) environment configuration.
 
